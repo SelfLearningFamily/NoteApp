@@ -1,7 +1,9 @@
 package com.zsols.notejet.component
 
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 
@@ -28,7 +30,7 @@ fun NoteAppInputField(
         modifier = modifier,
         value = text,
         onValueChange = onTextChange,
-         colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.Transparent),
+        colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.Transparent),
         maxLines = maxLine,
         label = { Text(text = label) },
         keyboardOptions = KeyboardOptions.Default.copy(
@@ -40,4 +42,21 @@ fun NoteAppInputField(
         })
 
     )
+}
+
+@Composable
+fun NoteButton(
+    modifier: Modifier = Modifier,
+    text: String,
+    onClick: () -> Unit,
+    enabled: Boolean = true
+) {
+    Button(
+        modifier = modifier,
+        onClick = onClick,
+    enabled = enabled,
+    shape = CircleShape) {
+        Text(text = text)
+    }
+
 }
