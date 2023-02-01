@@ -7,15 +7,10 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.zsols.notejet.data.NoteDataSource
-import com.zsols.notejet.model.NoteData
 import com.zsols.notejet.screen.NoteScreen
 import com.zsols.notejet.screen.NoteViewModel
 import com.zsols.notejet.ui.theme.NoteJetTheme

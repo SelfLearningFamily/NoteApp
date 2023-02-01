@@ -24,14 +24,14 @@ import com.zsols.notejet.R
 import com.zsols.notejet.component.NoteAppInputField
 import com.zsols.notejet.component.NoteButton
 import com.zsols.notejet.data.NoteDataSource
-import com.zsols.notejet.model.NoteData
+import com.zsols.notejet.model.UserNote
 import java.time.format.DateTimeFormatter
 
 @Composable
 fun NoteScreen(
-    notes: List<NoteData>,
-    onAddNote: (NoteData) -> Unit,
-    onRemoveNote: (NoteData) -> Unit,
+    notes: List<UserNote>,
+    onAddNote: (UserNote) -> Unit,
+    onRemoveNote: (UserNote) -> Unit,
 ) {
     var titleTxt by remember {
         mutableStateOf("")
@@ -82,7 +82,7 @@ fun NoteScreen(
 
             NoteButton(text = "Save", onClick = {
                 if (titleTxt.isNotEmpty() && desc.isNotEmpty()) {
-                    onAddNote(NoteData(title = titleTxt, desc = desc))
+                    onAddNote(UserNote(title = titleTxt, desc = desc))
                     titleTxt = ""
                     desc = ""
                     Toast.makeText(context, "Note Added", Toast.LENGTH_SHORT).show()
@@ -102,8 +102,8 @@ fun NoteScreen(
 @Composable
 fun NoteRow(
     modifier: Modifier = Modifier,
-    note: NoteData,
-    onNodeCLick: (NoteData) -> Unit
+    note: UserNote,
+    onNodeCLick: (UserNote) -> Unit
 ) {
     Surface(
         modifier = modifier
