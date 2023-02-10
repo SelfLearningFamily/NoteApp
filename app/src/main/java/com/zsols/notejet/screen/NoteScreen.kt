@@ -100,7 +100,7 @@ fun NoteScreen(
 }
 
 @Composable
-fun NoteRow(
+ fun NoteRow(
     modifier: Modifier = Modifier,
     note: UserNote,
     onNodeCLick: (UserNote) -> Unit

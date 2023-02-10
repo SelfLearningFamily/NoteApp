@@ -19,5 +19,5 @@ data class UserNote(
     val desc: String,
 
     @ColumnInfo(name = "note_entry_date")
-    val entryDate: Date = Date.from(Instant.now())
+    val entryDate: Date? = Date.from(Instant.now())
     )
