@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace 'com.zsols.notejet'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.zsols.notejet"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -70,12 +70,12 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
-    //implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-    //ksp "androidx.room:room-compiler:$room_version"
+//    ksp "androidx.room:room-compiler:$room_version"
     // To use Kotlin annotation processing tool (kapt)
 
 
