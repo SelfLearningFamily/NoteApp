@@ -1,12 +1,12 @@
 package com.zsols.notejet.model
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import java.time.Instant
 import java.time.LocalDateTime
+import java.time.OffsetDateTime
 import java.util.*
 
+@TypeConverters(DateConverter::class)
 @Entity(tableName = "notes_tbl")
 data class UserNote(
     @PrimaryKey
@@ -19,5 +19,5 @@ data class UserNote(
     val desc: String,
 
     @ColumnInfo(name = "note_entry_date")
-    val entryDate: Date? = Date.from(Instant.now())
+    val entryDate: OffsetDateTime? = OffsetDateTime.now()
     )

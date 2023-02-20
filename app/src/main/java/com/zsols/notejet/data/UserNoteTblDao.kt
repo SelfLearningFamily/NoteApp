@@ -9,7 +9,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.zsols.notejet.model.UserNote
-import com.zsols.notejet.model.abc
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -25,7 +24,7 @@ interface UserNoteTblDao {
     suspend fun insert(note: UserNote)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun update(note: Note)
+    suspend fun update(note: UserNote)
 
     @Query("DELETE from notes_tbl")
     suspend fun deleteAll()
@@ -34,8 +33,3 @@ interface UserNoteTblDao {
     suspend fun deleteNote(note: UserNote)
 }
 
-
-@Composable
-fun test(){
-    abc()
-}
